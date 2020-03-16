@@ -5,13 +5,11 @@ Create handlers for the repeater items.
 **`public/ctx.js`**
 
 ```js
-export const createCtx = (getData) => (cb) => (event) => {
+export const createCtx = (getData) => (callback) => (event) => {
   const itemId = event.context.itemId;
   const find = (i) => i._id === itemId;
 
-  cb(event, {
-    itemId,
-
+  callback(event, {
     $item: $w.at(event.context),
 
     get itemData() {
@@ -37,19 +35,18 @@ import { createCtx } from 'public/ctx';
 /**
  * Create a context with a callback function that returns actual repeater data.
  */
-const createHandler = createCtx(() => {
+const connectHandler = createCtx(() => {
   return $w('#repeater').data;
 });
 
 /**
- * Create an event handler for an item into the repeater
+ * Connect callback handler to repeater data scope
  */
-const clickHandler = createHandler((event, { itemId, $item, itemData, index, data }) => {
+const clickHandler = connectHandler((event, { $item, itemData, index, data }) => {
   // Event that is fired
   console.log(event);
   // Repeater item data
   console.log(
-    itemId,
     $item('#button').label,
     itemData,
     index,
