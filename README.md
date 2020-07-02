@@ -38,16 +38,17 @@ const useScope = createScope(() => {
 });
 
 $w.onReady(() => {
-  // Using
-  $w('#repeatedButton').onClick((event) => {
+  // use a dynamic event handler
+  $w("#repeatedButton").onClick((event) => {
     const { $item, itemData, index, data } = useScope(event);
-
-    console.log(
-      $item('#repeatedContainer'),
-      itemData,
-      index,
-      data,
-    );
   });
 });
+
+// or a static event handler
+export function repeatedButton_click(event) {
+  const { $item, itemData, index, data } = useScope(event);
+}
 ```
+
+- [Code Snippet with JSDocs](/index.js)
+- [Corvid by Wix: Event handling of Repeater Item](https://shoonia.site/event-handling-of-repeater-item/)
