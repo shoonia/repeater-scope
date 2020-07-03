@@ -2,18 +2,18 @@
  * Create handlers for the repeater items.
  *
  * @typedef {{
-        _id: string;
-        [key: string]: any;
-    }} DataItem;
+    _id: string;
+    [key: string]: any;
+  }} ItemData;
  *
  * @typedef {{
-      $item: $w.$w;
-      itemData: DataItem;
-      index: number;
-      data: DataItem[];
-    }} ScopeData;
+    $item: $w.$w;
+    itemData: ItemData;
+    index: number;
+    data: ItemData[];
+  }} ScopeData;
  *
- * @param {() => DataItem[]} getData
+ * @param {() => ItemData[]} getData
  * @returns {(event: $w.Event) => ScopeData}
  */
 export const createScope = (getData) => (event) => {

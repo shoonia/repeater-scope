@@ -5,6 +5,24 @@ Create handlers for the repeater items.
 **`public/util.js`**
 
 ```js
+/**
+ * Create handlers for the repeater items.
+ *
+ * @typedef {{
+    _id: string;
+    [key: string]: any;
+  }} ItemData;
+ *
+ * @typedef {{
+    $item: $w.$w;
+    itemData: ItemData;
+    index: number;
+    data: ItemData[];
+  }} ScopeData;
+ *
+ * @param {() => ItemData[]} getData
+ * @returns {(event: $w.Event) => ScopeData}
+ */
 export const createScope = (getData) => (event) => {
   const itemId = event.context.itemId;
   const find = (i) => i._id === itemId;
@@ -25,6 +43,7 @@ export const createScope = (getData) => (event) => {
     },
   };
 };
+
 ```
 
 **`Page Code`**
@@ -50,5 +69,5 @@ export function repeatedButton_click(event) {
 }
 ```
 
-- [Code Snippet with JSDocs](/index.js)
+- [Code Snippet](/index.js)
 - [Corvid by Wix: Event handling of Repeater Item](https://shoonia.site/event-handling-of-repeater-item/)
