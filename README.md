@@ -6,19 +6,19 @@ Create handlers for the repeater items.
 
 ```js
 /**
- * Create handlers for the repeater items.
+ * Create Repeated Item Scope
  *
  * @typedef {{
-    _id: string;
-    [key: string]: any;
-  }} ItemData;
+ *  _id: string;
+ *  [key: string]: any;
+ * }} ItemData;
  *
  * @typedef {{
-    $item: $w.$w;
-    itemData: ItemData;
-    index: number;
-    data: ItemData[];
-  }} ScopeData;
+ *   $item: $w.$w;
+ *   itemData: ItemData;
+ *   index: number;
+ *   data: ItemData[];
+ * }} ScopeData;
  *
  * @param {() => ItemData[]} getData
  * @returns {(event: $w.Event) => ScopeData}
