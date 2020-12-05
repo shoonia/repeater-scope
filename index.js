@@ -1,6 +1,8 @@
 /**
  * Create Repeated Item Scope
  *
+ *  @see {@link https://github.com/shoonia/repeater-scope}
+ *
  * @typedef {{
  *  _id: string;
  *  [key: string]: any;

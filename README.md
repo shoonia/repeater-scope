@@ -8,6 +8,8 @@ Create handlers for the repeater items.
 /**
  * Create Repeated Item Scope
  *
+ * @see {@link https://github.com/shoonia/repeater-scope}
+ *
  * @typedef {{
  *  _id: string;
  *  [key: string]: any;
@@ -65,10 +67,12 @@ $w.onReady(() => {
 });
 
 // or a static event handler
-export function repeatedButton_click(event) {
+export function repeatedButton_dblClick(event) {
   const { $item, itemData, index, data } = useScope(event);
 }
 ```
 
 - [Code Snippet](/index.js)
 - [Corvid by Wix: Event handling of Repeater Item](https://shoonia.site/event-handling-of-repeater-item/)
+
+## MIT
