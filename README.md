@@ -72,6 +72,6 @@ export function repeatedButton_dblClick(event) {
 ```
 
 - [Code Snippet](/index.js)
-- [Corvid by Wix: Event handling of Repeater Item](https://shoonia.site/event-handling-of-repeater-item/)
+- [Velo by Wix: Event handling of Repeater Item](https://shoonia.site/event-handling-of-repeater-item/)
 
 ## MIT
