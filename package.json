@@ -35,6 +35,13 @@
     "editorx",
     "velo"
   ],
+  "files": [
+    "dist",
+    "src",
+    "LICENSE",
+    "package.json",
+    "README.md"
+  ],
   "author": {
     "name": "Alexander Zaytsev",
     "email": "alexanderz@wix.com",

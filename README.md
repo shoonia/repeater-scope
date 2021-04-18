@@ -11,7 +11,7 @@ import { useScope } from 'repeater-scope';
 
 $w.onReady(() => {
   // use a dynamic event handler
-  $w("#repeatedButton").onClick((event) => {
+  $w('#repeatedButton').onClick((event) => {
     const { $item, itemData, index, data } = useScope(event);
   });
 });
