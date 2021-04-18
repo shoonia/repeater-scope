@@ -2,9 +2,6 @@
   "extends": [
     "eslint:recommended"
   ],
-  "plugins": [
-    "jsdoc"
-  ],
   "env": {
     "es6": true,
     "node": true,

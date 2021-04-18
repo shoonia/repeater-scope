@@ -7,7 +7,11 @@
     "lint": "eslint 'src/**/*.js'"
   },
   "devDependencies": {
-    "eslint": "^7.24.0"
+    "eslint": "^7.24.0",
+    "simple-git-hooks": "^2.3.1"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npm run lint"
   },
   "sideEffects": false,
   "keywords": [
