@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "The utils for Repeater scope event handlers in Velo by Wix.",
   "main": "src/index.js",
-  "scripts": {},
+  "scripts": {
+    "lint": "eslint 'src/**/*.js'"
+  },
+  "devDependencies": {
+    "eslint": "^7.24.0"
+  },
   "sideEffects": false,
   "keywords": [
     "wix",
