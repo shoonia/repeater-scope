@@ -26,6 +26,8 @@ export const useScope = (event) => {
   while ((repeter = repeter.parent).type !== '$w.Repeater');
 
   return {
+    repeter,
+
     // @ts-ignore
     $item: $w.at(ctx),
 
