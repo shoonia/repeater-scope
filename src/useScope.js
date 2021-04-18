@@ -22,8 +22,11 @@ export const useScope = (event) => {
   const find = (i) => i._id === ctx.itemId;
 
   let repeter = event.target;
+
   // @ts-ignore
-  while ((repeter = repeter.parent).type !== '$w.Repeater');
+  while ((repeter = repeter.parent).type !== '$w.Repeater') {
+    /**/
+  }
 
   return {
     repeter,
