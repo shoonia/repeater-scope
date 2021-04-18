@@ -1,0 +1,29 @@
+{
+  "name": "repeater-scope",
+  "version": "1.0.0",
+  "description": "Create handlers for the repeater items",
+  "main": "src/index.js",
+  "scripts": {},
+  "sideEffects": false,
+  "keywords": [
+    "wix",
+    "corvid",
+    "wixcode",
+    "editorx",
+    "velo"
+  ],
+  "author": {
+    "name": "Alexander Zaytsev",
+    "email": "alexanderz@wix.com",
+    "url": "https://twitter.com/_shoonia"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shoonia/repeater-scope.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shoonia/repeater-scope/issues"
+  },
+  "homepage": "https://github.com/shoonia/repeater-scope#readme",
+  "license": "MIT"
+}

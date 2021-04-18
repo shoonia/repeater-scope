@@ -2,52 +2,6 @@
 
 Create handlers for the repeater items.
 
-**`public/util.js`**
-
-```js
-/**
- * Create Repeated Item Scope
- * https://github.com/shoonia/repeater-scope
- *
- * @typedef {{
- *  _id: string;
- *  [key: string]: any;
- * }} ItemData;
- *
- * @typedef {{
- *   $item: $w.$w;
- *   itemData: ItemData;
- *   index: number;
- *   data: ItemData[];
- * }} ScopeData;
- *
- * @param {() => ItemData[]} getData
- * @returns {(event: $w.Event) => ScopeData}
- */
-export const createScope = (getData) => (event) => {
-  const itemId = event.context.itemId;
-  const find = (i) => i._id === itemId;
-
-  return {
-    // @ts-ignore
-    $item: $w.at(event.context),
-
-    get itemData() {
-      return getData().find(find);
-    },
-
-    get index() {
-      return getData().findIndex(find);
-    },
-
-    get data() {
-      return getData();
-    },
-  };
-};
-
-```
-
 **`Page Code`**
 
 ```js
@@ -71,7 +25,6 @@ export function repeatedButton_dblClick(event) {
 }
 ```
 
-- [Code Snippet](/index.js)
 - [Velo by Wix: Event handling of Repeater Item](https://shoonia.site/event-handling-of-repeater-item/)
 
 ## MIT
