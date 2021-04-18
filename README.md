@@ -1,6 +1,8 @@
 # repeater-scope
 
-[![build](https://github.com/shoonia/repeater-scope/actions/workflows/ci.yml/badge.svg)](https://github.com/shoonia/repeater-scope/actions/workflows/ci.yml)
+[![ci build](https://github.com/shoonia/repeater-scope/actions/workflows/ci.yml/badge.svg)](https://github.com/shoonia/repeater-scope/actions/workflows/ci.yml)
+[![npm version](https://badgen.net/npm/v/repeater-scope)](https://www.npmjs.com/package/repeater-scope)
+[![minzip](https://badgen.net/bundlephobia/minzip/repeater-scope)](https://bundlephobia.com/result?p=repeater-scope)
 
 The utils for Repeater scope event handlers in Velo by Wix.
 
