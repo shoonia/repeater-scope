@@ -1,5 +1,7 @@
 # repeater-scope
 
+[![build](https://github.com/shoonia/repeater-scope/actions/workflows/ci.yml/badge.svg)](https://github.com/shoonia/repeater-scope/actions/workflows/ci.yml)
+
 The utils for Repeater scope event handlers in Velo by Wix.
 
 ## useScope
