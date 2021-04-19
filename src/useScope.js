@@ -1,5 +1,5 @@
 /**
- * Use Repeater Scope
+ * Use Repeated Item Scope
  * https://github.com/shoonia/repeater-scope
  *
  * @typedef {{
@@ -23,7 +23,6 @@ export const useScope = (event) => {
 
   let repeter = event.target;
 
-  // @ts-ignore
   while ((repeter = repeter.parent).type !== '$w.Repeater') {
     /**/
   }
@@ -31,7 +30,6 @@ export const useScope = (event) => {
   return {
     repeter,
 
-    // @ts-ignore
     $item: $w.at(ctx),
 
     get itemData() {

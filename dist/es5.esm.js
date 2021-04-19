@@ -26,7 +26,6 @@ var createScope = function createScope(getData) {
     };
 
     return {
-      // @ts-ignore
       $item: $w.at(event.context),
 
       get itemData() {
@@ -45,7 +44,7 @@ var createScope = function createScope(getData) {
   };
 };
 /**
- * Use Repeater Scope
+ * Use Repeated Item Scope
  * https://github.com/shoonia/repeater-scope
  *
  * @typedef {{
@@ -71,7 +70,7 @@ var useScope = function useScope(event) {
     return i._id === ctx.itemId;
   };
 
-  var repeter = event.target; // @ts-ignore
+  var repeter = event.target;
 
   while ((repeter = repeter.parent).type !== '$w.Repeater') {
     /**/
@@ -79,7 +78,6 @@ var useScope = function useScope(event) {
 
   return {
     repeter: repeter,
-    // @ts-ignore
     $item: $w.at(ctx),
 
     get itemData() {

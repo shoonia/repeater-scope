@@ -22,7 +22,6 @@ export const createScope = (getData) => (event) => {
   const find = (i) => i._id === itemId;
 
   return {
-    // @ts-ignore
     $item: $w.at(event.context),
 
     get itemData() {

@@ -12,8 +12,6 @@ The utils for repeated item scope event handlers in [Velo](https://www.wix.com/v
 
 ### useScope
 
-**Page Code**
-
 ```js
 import { useScope } from 'repeater-scope';
 
@@ -31,8 +29,6 @@ export function repeatedButton_dblClick(event) {
 ```
 
 ### createScope
-
-**Page Code**
 
 ```js
 import { createScope } from 'repeater-scope';
