@@ -1,7 +1,7 @@
 {
   "name": "repeater-scope",
   "version": "0.1.0",
-  "description": "The utils for Repeater scope event handlers in Velo by Wix.",
+  "description": "The utils for repeated item scope event handlers in Velo by Wix",
   "main": "dist/es5.cjs.js",
   "module": "dist/es5.esm.js",
   "esmodule": "dist/esm.js",
