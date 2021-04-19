@@ -76,26 +76,26 @@ var useScope = function useScope(event) {
     return i._id === ctx.itemId;
   };
 
-  var repeter = event.target;
+  var repeater = event.target;
 
-  while ((repeter = repeter.parent).type !== '$w.Repeater') {
+  while ((repeater = repeater.parent).type !== '$w.Repeater') {
     /**/
   }
 
   return {
-    repeter: repeter,
+    repeater: repeater,
     $item: $w.at(ctx),
 
     get itemData() {
-      return repeter.data.find(find);
+      return repeater.data.find(find);
     },
 
     get index() {
-      return repeter.data.findIndex(find);
+      return repeater.data.findIndex(find);
     },
 
     get data() {
-      return repeter.data;
+      return repeater.data;
     }
 
   };
