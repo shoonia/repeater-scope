@@ -59,6 +59,7 @@ var createScope = function createScope(getData) {
  * }} ItemData;
  *
  * @typedef {{
+ *   repeater: $w.Repeater;
  *   $item: $w.$w;
  *   itemData: ItemData;
  *   index: number;
@@ -75,6 +76,7 @@ var useScope = function useScope(event) {
   var find = function find(i) {
     return i._id === ctx.itemId;
   };
+  /** @type {*} */
 
   var repeater = event.target;
 

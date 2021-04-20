@@ -48,6 +48,7 @@ const createScope = (getData) => (event) => {
  * }} ItemData;
  *
  * @typedef {{
+ *   repeater: $w.Repeater;
  *   $item: $w.$w;
  *   itemData: ItemData;
  *   index: number;
@@ -61,6 +62,7 @@ const useScope = (event) => {
   const ctx = event.context;
   const find = (i) => i._id === ctx.itemId;
 
+  /** @type {*} */
   let repeater = event.target;
 
   while ((repeater = repeater.parent).type !== '$w.Repeater') {
