@@ -49,7 +49,7 @@ export function repeatedButton_dblClick(event) {
 function useScope(event: $w.Event): ScopeData;
 
 type ScopeData = {
-  $item: $w;
+  $item: $w.$w;
   itemData: ItemData;
   index: number;
   data: ItemData[];
