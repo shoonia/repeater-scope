@@ -8,17 +8,30 @@ The utils for repeated item scope event handlers in [Velo](https://www.wix.com/v
 
 ![Velo by Wix](https://static.wixstatic.com/shapes/e3b156_89be007cf73e40da8513b7cede9bf089.svg)
 
+## How to use
+
+You use the [Package Manager](https://support.wix.com/en/article/velo-working-with-npm-packages) to manage the npm packages in your site.
+
+Latest available version: [Check status](https://www.wix.com/velo/npm-modules)
+
+![Installing repeater-scope with Velo npm Packages Manager](https://static.wixstatic.com/media/e3b156_d76c5e0dcf574ed192869d57ee9186c7~mv2.jpg)
+
 ## API
 
+Using global select function `$w()` you can select needed elements group in Repeater Item Template.
 ### useScope
+
+Automatic find the parent Repeater by emitted `event` object.
 
 ```js
 import { useScope } from 'repeater-scope';
 
 $w.onReady(() => {
-  // use a dynamic event handler
+  // use dynamic event handler with global selector function $w
   $w('#repeatedButton').onClick((event) => {
     const { $item, itemData, index, data } = useScope(event);
+
+    $item('#repeatedText').text = itemData.title;
   });
 });
 
@@ -30,6 +43,8 @@ export function repeatedButton_dblClick(event) {
 
 ### createScope
 
+Create scope function with specific data array. It can be useful with state management libraries.
+
 ```js
 import { createScope } from 'repeater-scope';
 
@@ -38,7 +53,7 @@ const useScope = createScope(() => {
   return $w('#repeater').data;
 });
 
-export function repeatedButton_dblClick(event) {
+export function repeatedButton_Click(event) {
   const { $item, itemData, index, data } = useScope(event);
 }
 ```

@@ -18,11 +18,11 @@
  * @returns {(event: $w.Event) => ScopeData}
  */
 export const createScope = (getData) => (event) => {
-  const itemId = event.context.itemId;
-  const find = (i) => i._id === itemId;
+  const ctx = event.context;
+  const find = (i) => i._id === ctx.itemId;
 
   return {
-    $item: $w.at(event.context),
+    $item: $w.at(ctx),
 
     get itemData() {
       return getData().find(find);

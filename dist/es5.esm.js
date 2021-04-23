@@ -19,14 +19,14 @@
  */
 var createScope = function createScope(getData) {
   return function (event) {
-    var itemId = event.context.itemId;
+    var ctx = event.context;
 
     var find = function find(i) {
-      return i._id === itemId;
+      return i._id === ctx.itemId;
     };
 
     return {
-      $item: $w.at(event.context),
+      $item: $w.at(ctx),
 
       get itemData() {
         return getData().find(find);
