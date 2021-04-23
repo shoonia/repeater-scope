@@ -38,7 +38,7 @@ $w.onReady(() => {
 // or a static event handler
 export function repeatedButton_dblClick(event) {
   const { $item, itemData, index, data } = useScope(event);
-}
+};
 ```
 
 ### createScope
@@ -55,7 +55,7 @@ const useScope = createScope(() => {
 
 export function repeatedButton_Click(event) {
   const { $item, itemData, index, data } = useScope(event);
-}
+};
 ```
 
 ## Syntax
@@ -73,7 +73,7 @@ type ScopeData = {
 type ItemData = {
   _id: string;
   [key: string]: any;
-};
+}
 ```
 
 ### Parameters
