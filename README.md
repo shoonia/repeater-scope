@@ -1,5 +1,6 @@
 # repeater-scope
 
+[![Build for Velo by Wix](https://img.shields.io/badge/Built%20for-Velo%20by%20Wix-3638f4)](https://wix.com/velo)
 [![ci build](https://github.com/shoonia/repeater-scope/actions/workflows/ci.yml/badge.svg)](https://github.com/shoonia/repeater-scope/actions/workflows/ci.yml)
 [![npm version](https://badgen.net/npm/v/repeater-scope)](https://www.npmjs.com/package/repeater-scope)
 [![minzip](https://badgen.net/bundlephobia/minzip/repeater-scope)](https://bundlephobia.com/result?p=repeater-scope)
