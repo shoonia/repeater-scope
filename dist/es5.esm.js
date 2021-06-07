@@ -101,7 +101,7 @@ var useScope = function useScope(event) {
  *
  * @example
  * ```
- * const queue = createQueue()
+ * const queue = createQueue();
  * const $element = $w('#element');
  *
  * $w('#block')
