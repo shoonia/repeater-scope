@@ -102,6 +102,66 @@ var useScope = function useScope(event) {
 
   };
 };
+/**
+ * Create a promise queue
+ *
+ * @example
+ * ```
+ * const queue = createQueue()
+ * const $element = $w('#element');
+ *
+ * $w('#block')
+ *   .onMouseIn(() => {
+ *     queue(() => $element.show());
+ *  })
+ *   .onMouseOut(() => {
+ *     queue(() => $element.hide());
+ *  });
+ * ```
+ *
+ * @typedef {() => Promise<unknown>} Item
+ *
+ * @param {number} [maxLength] - max count items in the queue
+ * @returns {(item: Item) => void}
+ */
 
+var createQueue = function createQueue(maxLength) {
+  if (maxLength === void 0) {
+    maxLength = 1;
+  }
+
+  /** @type {boolean} */
+  var isRunning = false;
+  /** @type {Item[]} */
+
+  var items = [];
+
+  var runQueue = function runQueue() {
+    if (isRunning) {
+      return;
+    }
+
+    var item = items.shift();
+
+    if (typeof item === 'function') {
+      isRunning = true;
+      Promise.resolve(item()).then(function () {}, function () {}).then(function () {
+        isRunning = false;
+        runQueue();
+      });
+    }
+  };
+
+  return function (item) {
+    if (items.length >= maxLength) {
+      items.pop();
+    }
+
+    items.push(item);
+    runQueue();
+  };
+};
+
+exports.createQueue = createQueue;
 exports.createScope = createScope;
 exports.useScope = useScope;
