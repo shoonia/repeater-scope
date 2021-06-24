@@ -88,6 +88,7 @@ type ItemData = {
 
 - [Repeater Introduction](https://www.wix.com/velo/reference/$w/repeater/introduction)
 - [Event handling of Repeater Item](https://shoonia.site/event-handling-of-repeater-item/)
+- [The utils for repeated item scope event handlers](https://shoonia.site/the-utils-for-repeated-item-scope-event-handlers)
 
 ## License
 
