@@ -17,24 +17,30 @@
  * @param {() => ItemData[]} getData
  * @returns {(event: $w.Event) => ScopeData}
  */
-const createScope = (getData) => (event) => {
-  const ctx = event.context;
-  const find = (i) => i._id === ctx.itemId;
+var createScope = function createScope(getData) {
+  return function (event) {
+    var ctx = event.context;
 
-  return {
-    $item: $w.at(ctx),
+    var find = function find(i) {
+      return i._id === ctx.itemId;
+    };
 
-    get itemData() {
-      return getData().find(find);
-    },
+    return {
+      $item: $w.at(ctx),
 
-    get index() {
-      return getData().findIndex(find);
-    },
+      get itemData() {
+        return getData().find(find);
+      },
 
-    get data() {
-      return getData();
-    },
+      get index() {
+        return getData().findIndex(find);
+      },
+
+      get data() {
+        return getData();
+      }
+
+    };
   };
 };
 
@@ -58,20 +64,22 @@ const createScope = (getData) => (event) => {
  * @param {$w.Event} event
  * @returns {ScopeData}
  */
-const useScope = (event) => {
-  const ctx = event.context;
-  const find = (i) => i._id === ctx.itemId;
+var useScope = function useScope(event) {
+  var ctx = event.context;
 
+  var find = function find(i) {
+    return i._id === ctx.itemId;
+  };
   /** @type {*} */
-  let repeater = event.target;
+
+  var repeater = event.target;
 
   while ((repeater = repeater.parent).type !== '$w.Repeater') {
     /**/
   }
 
   return {
-    repeater,
-
+    repeater: repeater,
     $item: $w.at(ctx),
 
     get itemData() {
@@ -84,7 +92,8 @@ const useScope = (event) => {
 
     get data() {
       return repeater.data;
-    },
+    }
+
   };
 };
 

@@ -1,38 +1,31 @@
-import { getBabelOutputPlugin } from '@rollup/plugin-babel';
-
-const babelPlugin = getBabelOutputPlugin({
-  presets: [
-    [
-      '@babel/preset-env',
-      {
-        loose: true,
-        useBuiltIns: 'entry',
-        targets: 'defaults',
-      },
-    ],
-  ],
-});
+import babel from '@rollup/plugin-babel';
+import pkg from './package.json';
 
 export default {
-  input: './src/index.js',
+  input: pkg.source,
   output: [
     {
-      file: './dist/esm.js',
-      format: 'esm',
+      file: pkg.exports.import,
+      format: 'es',
     },
     {
-      file: './dist/es5.esm.js',
-      format: 'esm',
-      plugins: [
-        babelPlugin,
-      ],
-    },
-    {
-      file: './dist/es5.cjs.js',
+      file: pkg.exports.require,
       format: 'cjs',
-      plugins: [
-        babelPlugin,
-      ],
     },
   ],
+  plugins: [
+    babel({
+      babelHelpers: 'bundled',
+      presets: [
+        [
+          '@babel/preset-env',
+          {
+            loose: true,
+            useBuiltIns: 'entry',
+            targets: 'defaults',
+          },
+        ],
+      ],
+    })
+  ]
 };

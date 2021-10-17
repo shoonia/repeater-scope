@@ -2,13 +2,15 @@
   "name": "repeater-scope",
   "version": "1.2.0",
   "description": "The utils for repeated item scope event handlers in Velo by Wix",
-  "main": "dist/es5.cjs.js",
-  "module": "dist/es5.esm.js",
-  "esmodule": "dist/esm.js",
+  "type": "module",
   "source": "src/index.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+
   "exports": {
-    "import": "./dist/es5.esm.js",
-    "require": "./dist/es5.cjs.js"
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs",
+    "default": "./dist/index.js"
   },
   "scripts": {
     "build": "rollup -c && eslint 'dist/**/*.js' --fix",
@@ -29,14 +31,12 @@
   "sideEffects": false,
   "keywords": [
     "wix",
-    "corvid",
     "wixcode",
     "editorx",
     "velo"
   ],
   "files": [
     "dist",
-    "src",
     "LICENSE",
     "package.json",
     "README.md"

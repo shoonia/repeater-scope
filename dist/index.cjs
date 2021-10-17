@@ -1,8 +1,7 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * Create Repeated Item Scope
  * https://github.com/shoonia/repeater-scope
@@ -22,7 +21,6 @@ Object.defineProperty(exports, '__esModule', {
  * @param {() => ItemData[]} getData
  * @returns {(event: $w.Event) => ScopeData}
  */
-
 var createScope = function createScope(getData) {
   return function (event) {
     var ctx = event.context;
@@ -49,6 +47,7 @@ var createScope = function createScope(getData) {
     };
   };
 };
+
 /**
  * Use Repeated Item Scope
  * https://github.com/shoonia/repeater-scope
@@ -69,7 +68,6 @@ var createScope = function createScope(getData) {
  * @param {$w.Event} event
  * @returns {ScopeData}
  */
-
 var useScope = function useScope(event) {
   var ctx = event.context;
 
@@ -77,6 +75,7 @@ var useScope = function useScope(event) {
     return i._id === ctx.itemId;
   };
   /** @type {*} */
+
 
   var repeater = event.target;
 
