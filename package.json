@@ -6,7 +6,6 @@
   "source": "src/index.js",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
-
   "exports": {
     "import": "./dist/index.js",
     "require": "./dist/index.cjs",
