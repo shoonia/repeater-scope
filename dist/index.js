@@ -72,6 +72,7 @@ var useScope = function useScope(event) {
   };
   /** @type {*} */
 
+
   var repeater = event.target;
 
   while ((repeater = repeater.parent).type !== '$w.Repeater') {

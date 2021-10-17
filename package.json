@@ -13,7 +13,7 @@
     "default": "./dist/index.js"
   },
   "scripts": {
-    "build": "rollup -c && eslint 'dist/**/*.js' --fix",
+    "build": "rollup -c",
     "lint": "eslint 'src/**/*.js'"
   },
   "devDependencies": {

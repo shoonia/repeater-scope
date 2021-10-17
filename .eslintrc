@@ -13,6 +13,9 @@
   "globals": {
     "$w": "readonly"
   },
+  "ignorePatterns": [
+    "dist/"
+  ],
   "rules": {
     "linebreak-style": "off",
     "no-console": "off",
