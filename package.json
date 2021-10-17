@@ -7,9 +7,11 @@
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "exports": {
-    "import": "./dist/index.js",
-    "require": "./dist/index.cjs",
-    "default": "./dist/index.js"
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    }
   },
   "scripts": {
     "build": "rollup -c",
