@@ -1,7 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
 /**
  * Create Repeated Item Scope
  * https://github.com/shoonia/repeater-scope

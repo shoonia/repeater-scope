@@ -11,6 +11,8 @@ export default {
     {
       file: pkg.main,
       format: 'cjs',
+      interop: false,
+      esModule: false,
     },
   ],
   plugins: [
