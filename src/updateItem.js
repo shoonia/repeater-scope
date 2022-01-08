@@ -5,9 +5,9 @@ import { getRepeater } from './getRepeater';
  * https://github.com/shoonia/repeater-scope
  *
  * @param {$w.Event} event
- * @param {$w.ForItemCallback} cb
+ * @param {$w.ForItemCallback} callback
  * @returns {void}
  */
-export const updateItem = (event, cb) => {
-  getRepeater(event).forItems([event.context.itemId], cb);
+export const updateItem = (event, callback) => {
+  getRepeater(event).forItems([event.context.itemId], callback);
 };

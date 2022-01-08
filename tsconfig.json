@@ -1,7 +1,7 @@
 {
-  "allowJs": true,
   "extends": "./node_modules/corvid-types/configs/tsconfig.pages.json",
   "compilerOptions": {
+    "allowJs": true,
     "checkJs": true,
     "module": "es2020",
     "moduleResolution": "node",
