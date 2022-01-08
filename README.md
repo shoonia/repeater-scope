@@ -20,6 +20,12 @@ Latest available version: [Check status](https://www.wix.com/velo/npm-modules)
 ## API
 
 Using global select function `$w()` you can select needed elements group in Repeater Item Template.
+
+- [`useScope(event)`](#usescope)
+- [`createScope(cb)`](#createscope)
+- [`getRepeater(event)`](#getrepeater)
+- [`updateItem(event, callback)`](#updateitem)
+
 ### useScope
 
 Automatic find the parent Repeater by emitted `event` object.
@@ -59,10 +65,44 @@ export function repeatedButton_Click(event) {
 };
 ```
 
+### getRepeater
+
+Gets parent Repeater by event
+
+```js
+import { updateItem } from 'repeater-scope';
+
+$w.onReady(() => {
+  $w('#repeatedButton').onClick((event) => {
+    const $repeater = getRepeater(event);
+
+    $repeater.hide();
+  });
+});
+```
+
+## updateItem
+
+Update Repeated Item by event
+
+```js
+import { updateItem } from 'repeater-scope';
+
+$w.onReady(() => {
+  $w('#repeatedButton').onClick((event) => {
+    updateItem(event, ($item, itemData, index) => {
+      $item('#repeatedText').text = itemData.title;
+    });
+  });
+});
+```
+
 ## Syntax
 
 ```ts
 function useScope(event: $w.Event): ScopeData;
+
+function createScope(event: $w.Event): ScopeData;
 
 type ScopeData = {
   $item: $w.$w;
@@ -75,6 +115,10 @@ type ItemData = {
   _id: string;
   [key: string]: any;
 }
+
+function getRepeater(event: $w.Event): $w.Repeater;
+
+function updateItem(event: $w.Event, callback: $w.ForItemCallback): void
 ```
 
 ### Parameters
