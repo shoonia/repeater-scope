@@ -81,7 +81,7 @@ $w.onReady(() => {
 });
 ```
 
-## updateItem
+### updateItem
 
 Update Repeated Item by event
 
