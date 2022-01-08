@@ -1,5 +1,10 @@
 import babel from '@rollup/plugin-babel';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
 import pkg from './package.json';
+
+const extensions = [
+  '.ts',
+];
 
 export default {
   input: pkg.source,
@@ -16,9 +21,14 @@ export default {
     },
   ],
   plugins: [
+    nodeResolve({
+      extensions,
+    }),
     babel({
       babelHelpers: 'bundled',
+      extensions,
       presets: [
+        '@babel/typescript',
         [
           '@babel/preset-env',
           {

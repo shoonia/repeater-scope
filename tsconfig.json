@@ -1,21 +1,23 @@
 {
   "extends": "./node_modules/corvid-types/configs/tsconfig.pages.json",
   "compilerOptions": {
-    "allowJs": true,
-    "checkJs": true,
-    "module": "es2020",
+    "module": "es2022",
     "moduleResolution": "node",
-    "target": "es2020",
+    "importsNotUsedAsValues": "error",
+    "target": "es2021",
     "sourceMap": false,
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
     "lib": [
-      "es2020",
+      "es2021",
       "WebWorker"
     ],
   },
   "include": [
-    "src/**/*.js"
+    "src/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules/"
   ]
 }
