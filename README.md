@@ -100,9 +100,9 @@ $w.onReady(() => {
 ## Syntax
 
 ```ts
-function useScope(event: $w.Event): ScopeData;
+function useScope(event: $w.Event): ScopeData
 
-function createScope(event: $w.Event): ScopeData;
+function createScope(event: $w.Event): ScopeData
 
 type ScopeData = {
   $item: $w.$w;
@@ -116,7 +116,7 @@ type ItemData = {
   [key: string]: any;
 }
 
-function getRepeater(event: $w.Event): $w.Repeater;
+function getRepeater(event: $w.Event): $w.Repeater
 
 function updateItem(event: $w.Event, callback: $w.ForItemCallback): void
 ```
@@ -130,9 +130,9 @@ function updateItem(event: $w.Event, callback: $w.ForItemCallback): void
 
 ## Resources
 
-- [Repeater Introduction](https://www.wix.com/velo/reference/$w/repeater/introduction)
 - [Event handling of Repeater Item](https://shoonia.site/event-handling-of-repeater-item/)
 - [The utils for repeated item scope event handlers](https://shoonia.site/the-utils-for-repeated-item-scope-event-handlers)
+- [Repeater Introduction](https://www.wix.com/velo/reference/$w/repeater/introduction)
 
 ## License
 

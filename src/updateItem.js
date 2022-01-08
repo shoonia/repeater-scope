@@ -1,7 +1,7 @@
 import { getRepeater } from './getRepeater';
 
 /**
- * Update Repeated item by event
+ * Update Repeated Item by event
  * https://github.com/shoonia/repeater-scope
  *
  * @param {$w.Event} event
