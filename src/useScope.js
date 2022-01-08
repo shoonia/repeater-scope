@@ -1,3 +1,5 @@
+import { getRepeater } from './getRepeater';
+
 /**
  * Use Repeated Item Scope
  * https://github.com/shoonia/repeater-scope
@@ -5,45 +7,35 @@
  * @typedef {{
  *  _id: string;
  *  [key: string]: any;
- * }} ItemData;
+ * }} IData;
  *
  * @typedef {{
- *   repeater: $w.Repeater;
  *   $item: $w.$w;
- *   itemData: ItemData;
+ *   itemData: IData;
  *   index: number;
- *   data: ItemData[];
- * }} ScopeData;
+ *   data: IData[];
+ * }} IScopeData;
  *
  * @param {$w.Event} event
- * @returns {ScopeData}
+ * @returns {IScopeData}
  */
 export const useScope = (event) => {
   const ctx = event.context;
   const find = (i) => i._id === ctx.itemId;
 
-  /** @type {*} */
-  let repeater = event.target;
-
-  while ((repeater = repeater.parent).type !== '$w.Repeater') {
-    /**/
-  }
-
   return {
-    repeater,
-
     $item: $w.at(ctx),
 
     get itemData() {
-      return repeater.data.find(find);
+      return getRepeater(event).data.find(find);
     },
 
     get index() {
-      return repeater.data.findIndex(find);
+      return getRepeater(event).data.findIndex(find);
     },
 
     get data() {
-      return repeater.data;
+      return getRepeater(event).data;
     },
   };
 };

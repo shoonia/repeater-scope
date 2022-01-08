@@ -47,58 +47,82 @@ var createScope = function createScope(getData) {
 };
 
 /**
+ * Get parent Repeater by event
+ * https://github.com/shoonia/repeater-scope
+ *
+ * @param {$w.Event} event
+ * @returns {$w.Repeater}
+ */
+var getRepeater = function getRepeater(event) {
+  /** @type {*} */
+  var node = event.target;
+
+  while ((node = node.parent).type !== '$w.Repeater') {
+    /**/
+  }
+
+  return node;
+};
+
+/**
  * Use Repeated Item Scope
  * https://github.com/shoonia/repeater-scope
  *
  * @typedef {{
  *  _id: string;
  *  [key: string]: any;
- * }} ItemData;
+ * }} IData;
  *
  * @typedef {{
- *   repeater: $w.Repeater;
  *   $item: $w.$w;
- *   itemData: ItemData;
+ *   itemData: IData;
  *   index: number;
- *   data: ItemData[];
- * }} ScopeData;
+ *   data: IData[];
+ * }} IScopeData;
  *
  * @param {$w.Event} event
- * @returns {ScopeData}
+ * @returns {IScopeData}
  */
+
 var useScope = function useScope(event) {
   var ctx = event.context;
 
   var find = function find(i) {
     return i._id === ctx.itemId;
   };
-  /** @type {*} */
-
-
-  var repeater = event.target;
-
-  while ((repeater = repeater.parent).type !== '$w.Repeater') {
-    /**/
-  }
 
   return {
-    repeater: repeater,
     $item: $w.at(ctx),
 
     get itemData() {
-      return repeater.data.find(find);
+      return getRepeater(event).data.find(find);
     },
 
     get index() {
-      return repeater.data.findIndex(find);
+      return getRepeater(event).data.findIndex(find);
     },
 
     get data() {
-      return repeater.data;
+      return getRepeater(event).data;
     }
 
   };
 };
 
+/**
+ * Update Repeated item by event
+ * https://github.com/shoonia/repeater-scope
+ *
+ * @param {$w.Event} event
+ * @param {$w.ForItemCallback} cb
+ * @returns {void}
+ */
+
+var updateItem = function updateItem(event, cb) {
+  getRepeater(event).forItems([event.context.itemId], cb);
+};
+
 exports.createScope = createScope;
+exports.getRepeater = getRepeater;
+exports.updateItem = updateItem;
 exports.useScope = useScope;
