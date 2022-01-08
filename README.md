@@ -70,7 +70,7 @@ export function repeatedButton_Click(event) {
 Gets parent Repeater by event
 
 ```js
-import { updateItem } from 'repeater-scope';
+import { getRepeater } from 'repeater-scope';
 
 $w.onReady(() => {
   $w('#repeatedButton').onClick((event) => {
