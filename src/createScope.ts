@@ -1,10 +1,10 @@
-import type { IData, IScopeData } from './types';
+import type { ItemData, ScopeData } from './types';
 
-type TGetData = () => IData[];
+type TGetData = () => ItemData[];
 
-export const createScope = (getData: TGetData) => (event: $w.Event): IScopeData => {
+export const createScope = (getData: TGetData) => (event: $w.Event): ScopeData => {
   const ctx = event.context;
-  const find = (i: IData) => i._id === ctx.itemId;
+  const find = (i: ItemData) => i._id === ctx.itemId;
 
   return {
     $item: $w.at(ctx),

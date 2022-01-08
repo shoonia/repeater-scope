@@ -1,11 +1,11 @@
-export interface IData {
+export interface ItemData {
   readonly _id: string;
   readonly [key: string]: unknown;
 }
 
-export interface IScopeData {
+export interface ScopeData {
   readonly $item: $w.$w;
-  readonly itemData?: IData;
+  readonly itemData?: ItemData;
   readonly index: number;
-  readonly data: IData[];
+  readonly data: ItemData[];
 }

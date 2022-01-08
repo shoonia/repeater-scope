@@ -1,9 +1,9 @@
-import type { IData, IScopeData } from './types';
+import type { ItemData, ScopeData } from './types';
 import { getRepeater } from './getRepeater';
 
-export const useScope = (event: $w.Event): IScopeData => {
+export const useScope = (event: $w.Event): ScopeData => {
   const ctx = event.context;
-  const find = (i: IData) => i._id === ctx.itemId;
+  const find = (i: ItemData) => i._id === ctx.itemId;
 
   return {
     $item: $w.at(ctx),
