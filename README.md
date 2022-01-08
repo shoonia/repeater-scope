@@ -23,8 +23,8 @@ Using global select function `$w()` you can select needed elements group in Repe
 
 - [`useScope(event)`](#usescope)
 - [`createScope(cb)`](#createscope)
-- [`getRepeater(event)`](#getrepeater)
-- [`updateItem(event, callback)`](#updateitem)
+- [`getRepeater(event)`](#getrepeater) *(since v2.0.0)*
+- [`updateItem(event, callback)`](#updateitem) *(since v2.0.0)*
 
 ### useScope
 
