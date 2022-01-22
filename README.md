@@ -131,7 +131,8 @@ function updateItem(event: $w.Event, callback: $w.ForItemCallback): void
 ## Resources
 
 - [Event handling of Repeater Item](https://shoonia.site/event-handling-of-repeater-item/)
-- [The utils for repeated item scope event handlers](https://shoonia.site/the-utils-for-repeated-item-scope-event-handlers)
+- [The utils for repeated item scope event handlers](https://shoonia.site/the-utils-for-repeated-item-scope-event-handlers/)
+- [Repeated item event handlers v2.0](https://shoonia.site/repeated-item-event-handlers-v2/)
 - [Repeater Introduction](https://www.wix.com/velo/reference/$w/repeater/introduction)
 
 ## License
