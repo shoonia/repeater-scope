@@ -1,0 +1,16 @@
+name: Auto-merge
+
+on:
+  pull_request:
+    branches:
+      - dependabot/npm_and_yarn/DEMO/**
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v3
+     
+    - name: Auto-merge PR
+      uses: ahmadnassri/action-dependabot-auto-merge@v2
