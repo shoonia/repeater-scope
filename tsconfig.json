@@ -3,7 +3,6 @@
   "compilerOptions": {
     "module": "es2022",
     "moduleResolution": "node",
-    "importsNotUsedAsValues": "error",
     "target": "es2021",
     "sourceMap": false,
     "strict": true,
