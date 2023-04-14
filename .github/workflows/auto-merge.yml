@@ -1,17 +1,17 @@
-name: CI
+name: Auto-merge
 
 on:
-  push:
+  pull_request:
     branches:
-      - master
+      - dependabot/npm_and_yarn/**
 
 jobs:
-  build:
+  auto-merge:
     runs-on: ubuntu-20.04
     steps:
     - name: Checkout the repository
       uses: actions/checkout@v3
-
+      
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
@@ -21,3 +21,6 @@ jobs:
     - run: npm ci
     - run: npm run lint
     - run: npm run build
+     
+    - name: Auto-merge PR
+      uses: ahmadnassri/action-dependabot-auto-merge@v2
