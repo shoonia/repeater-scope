@@ -1,10 +1,9 @@
 name: Auto-merge
 
 on:
-  push:
+  pull_request:
     branches:
       - dependabot/npm_and_yarn/**
-  pull_request:
 
 jobs:
   auto-merge:
