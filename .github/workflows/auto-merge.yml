@@ -3,7 +3,7 @@ name: Auto-merge
 on:
   push:
     branches:
-      - dependabot/npm_and_yarn/DEMO/**
+      - dependabot/npm_and_yarn/**
   pull_request:
 
 jobs:
@@ -12,6 +12,16 @@ jobs:
     steps:
     - name: Checkout the repository
       uses: actions/checkout@v3
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+        cache: npm
+
+    - run: npm ci
+    - run: npm run lint
+    - run: npm run build
      
     - name: Auto-merge PR
       uses: ahmadnassri/action-dependabot-auto-merge@v2
