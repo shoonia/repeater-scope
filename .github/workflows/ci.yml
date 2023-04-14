@@ -1,19 +1,24 @@
-name: build
+name: CI
 
-on: 
-  - push
-  - pull_request
+on:
+  push:
+    branches:
+      - master
+  pull_request:
 
 jobs:
   build:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          cache: npm
+    - name: Checkout the repository
+      uses: actions/checkout@v3
 
-      - run: npm ci
-      - run: npm run lint
-      - run: npm run build
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+        cache: npm
+
+    - run: npm ci
+    - run: npm run lint
+    - run: npm run build
