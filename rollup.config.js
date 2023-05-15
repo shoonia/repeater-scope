@@ -1,6 +1,8 @@
+import { createRequire } from 'node:module';
 import babel from '@rollup/plugin-babel';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
-import pkg from './package.json';
+
+const pkg = createRequire(import.meta.url)('./package.json');
 
 const extensions = [
   '.ts',
