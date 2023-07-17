@@ -23,7 +23,7 @@
     "@babel/preset-typescript": "^7.16.7",
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-node-resolve": "^15.0.2",
-    "@typescript-eslint/eslint-plugin": "^5.23.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^5.23.0",
     "corvid-types": "^0.4.189",
     "eslint": "^8.15.0",
