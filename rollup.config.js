@@ -31,6 +31,7 @@ export default {
       presets: [
         '@babel/typescript',
       ],
+      comments: false,
     })
   ]
 };
