@@ -30,14 +30,6 @@ export default {
       extensions,
       presets: [
         '@babel/typescript',
-        [
-          '@babel/preset-env',
-          {
-            loose: true,
-            useBuiltIns: 'entry',
-            targets: 'defaults',
-          },
-        ],
       ],
     })
   ]
