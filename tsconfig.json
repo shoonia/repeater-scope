@@ -1,15 +1,16 @@
 {
   "extends": "./node_modules/corvid-types/configs/tsconfig.pages.json",
   "compilerOptions": {
-    "module": "es2022",
+    "module": "ESNext",
     "moduleResolution": "node",
-    "target": "es2021",
+    "target": "ESNext",
     "sourceMap": false,
     "strict": true,
     "noEmit": true,
     "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
     "lib": [
-      "es2021",
+      "ESNext",
       "WebWorker"
     ],
   },
