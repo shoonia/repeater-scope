@@ -10,7 +10,7 @@ The utils for repeated item scope event handlers in [Velo](https://www.wix.com/v
 
 ## How to use
 
-You use the [Package Manager](https://support.wix.com/en/article/velo-working-with-npm-packages) to manage the npm packages in your site.
+You use the [Package Manager](https://dev.wix.com/docs/develop-websites/articles/coding-with-velo/packages/working-with-npm-packages) to manage the npm packages in your site.
 
 Latest available version: [Check status](https://www.wix.com/velo/npm-modules)
 
