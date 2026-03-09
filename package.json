@@ -20,7 +20,7 @@
   "devDependencies": {
     "@babel/core": "^7.28.4",
     "@babel/preset-typescript": "^7.27.1",
-    "@rollup/plugin-babel": "^6.1.0",
+    "@rollup/plugin-babel": "^7.0.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
     "corvid-types": "^0.4.454",
     "rollup": "^4.52.5",
