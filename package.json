@@ -24,7 +24,7 @@
     "@rollup/plugin-node-resolve": "^16.0.3",
     "corvid-types": "^0.4.454",
     "rollup": "^4.52.5",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.2"
   },
   "sideEffects": false,
   "keywords": [
